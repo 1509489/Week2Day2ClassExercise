@@ -25,7 +25,6 @@ public class QueryActivity extends AppCompatActivity {
     }
 
     public void query(View view) {
-        String key = getIntent().getStringExtra("key");
 
         String value = etQuery.getText().toString();
         Intent intent = new Intent(this, MainActivity.class);
