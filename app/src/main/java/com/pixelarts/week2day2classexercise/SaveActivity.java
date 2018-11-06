@@ -14,7 +14,6 @@ import android.widget.Toast;
 public class SaveActivity extends AppCompatActivity {
 
     private EditText etSave, etKey;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,14 +31,19 @@ public class SaveActivity extends AppCompatActivity {
 
     public void save(View view) {
 
+
+
         SharedPreferences sharedPreferences = getSharedPreferences("sp", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(etKey.getText().toString(), etSave.getText().toString());
         editor.commit();
+
+        String saveValue = etSave.getText().toString();
+
         Intent sharedPrefIntent = new Intent(this, MainActivity.class);
-        sharedPrefIntent.setAction("sharedPrefs");
-        sharedPrefIntent.putExtra("key", etKey.getText().toString());
+        sharedPrefIntent.putExtra("savedValue", saveValue);
         startActivity(sharedPrefIntent);
-        Toast.makeText(this, "Saved Successfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Saved Successfully" , Toast.LENGTH_SHORT).show();
+
     }
 }

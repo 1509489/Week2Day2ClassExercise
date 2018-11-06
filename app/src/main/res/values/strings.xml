@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Week2Day2ClassExercise</string>
+    <string name="title_activity_web">WebActivity</string>
 </resources>

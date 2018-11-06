@@ -29,10 +29,11 @@ public class QueryActivity extends AppCompatActivity {
 
         String value = etQuery.getText().toString();
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra(key, value);
-        setResult(Activity.RESULT_OK, intent);
-        finish();
+        intent.putExtra("query", value);
+        startActivity(intent);
+        /*setResult(Activity.RESULT_OK, intent);
+        finish();*/
 
-        Toast.makeText(this, "Query Successful", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Query Successful ", Toast.LENGTH_SHORT).show();
     }
 }
